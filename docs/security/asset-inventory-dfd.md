@@ -374,7 +374,7 @@ Bagian ini sengaja dibiarkan terbuka agar tidak mengarang keputusan teknis sebel
 - [x] DFD Level 1 pembayaran merchant sudah menggambarkan aliran data utama.
 - [x] Trust boundary dan risiko utama sudah diidentifikasi.
 - [x] Asumsi dan keputusan teknis yang belum ditentukan sudah dicatat.
-- [ ] Review akhir oleh pemilik proyek.
+- [X] Review akhir oleh pemilik proyek.
 
 ---
 
