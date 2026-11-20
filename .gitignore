@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.log
+
+# Nilai asli tidak boleh masuk repo (kebijakan keamanan, klausul 5)
+.env
+.env.*
+!.env.example

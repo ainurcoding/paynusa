@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  wallet:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16.6
+        env:
+          POSTGRES_USER: wallet_user
+          # Kredensial sekali pakai untuk database tes di dalam runner CI, bukan secret.
+          POSTGRES_PASSWORD: ci_only_password
+          POSTGRES_DB: wallet_test_db
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U wallet_user -d wallet_test_db"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      TEST_DATABASE_URL: postgres://wallet_user:ci_only_password@localhost:5432/wallet_test_db
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      # Pemindaian dependensi (klausul 6 kebijakan). SAST dan pemindaian image ditambahkan di task CI.
+      - run: npm audit --audit-level=high

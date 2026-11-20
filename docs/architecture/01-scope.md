@@ -53,4 +53,4 @@ Scope-nya adalah API dompet digital dengan enam service plus sebuah bank fiktif 
 ## Pertanyaan terbuka
 
 - ~~Satu schema atau satu database per service?~~ Diputuskan: satu instance, satu database per service ([ADR 0006](../adr/0006-database-per-service.md)).
-- Apakah service saling memanggil langsung, atau hanya lewat event? Diusulkan: HTTP untuk yang mendesak, event untuk efek samping ([ADR 0007](../adr/0007-komunikasi-antar-service.md), menunggu persetujuan).
+- Apakah service saling memanggil langsung, atau hanya lewat event? Diputuskan: HTTP untuk yang mendesak, event untuk efek samping ([ADR 0007](../adr/0007-komunikasi-antar-service.md)).

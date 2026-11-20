@@ -1,6 +1,6 @@
 # ADR 0007: Komunikasi antar service: HTTP untuk yang mendesak, event untuk efek samping
 
-- Status: Diusulkan (menunggu persetujuan pemilik)
+- Status: Diterima
 - Tanggal: 2026-11-20
 
 ## Konteks

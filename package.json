@@ -1,0 +1,11 @@
+{
+  "name": "paynusa",
+  "private": true,
+  "description": "PayNusa: dompet digital fiktif untuk proyek portofolio (semua uang dan data bersifat simulasi)",
+  "workspaces": ["services/*"],
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present"
+  }
+}

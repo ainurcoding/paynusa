@@ -1,0 +1,30 @@
+# Jalankan dengan: podman compose up -d
+# PostgreSQL sudah berjalan sebagai container "paynusa-postgres", jadi di sini
+# hanya NATS yang aktif secara default. Service postgres di bawah bersifat
+# opsional (profile "db") untuk orang lain yang mengikuti repo ini:
+#   podman compose --profile db up -d
+
+services:
+  nats:
+    image: docker.io/library/nats:2.10-alpine
+    command: ["-js", "-sd", "/data"] # -js mengaktifkan JetStream (lihat ADR 0004)
+    ports:
+      - "127.0.0.1:4222:4222"
+    volumes:
+      - nats-data:/data
+    restart: unless-stopped
+
+  postgres:
+    profiles: ["db"]
+    image: docker.io/library/postgres:16.6
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?isi POSTGRES_PASSWORD di environment}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  nats-data:
+  postgres-data:
