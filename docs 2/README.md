@@ -7,6 +7,15 @@
 - [01 Scope dan profil perusahaan](architecture/01-scope.md)
 - [02 Arsitektur C4 (Level 1 dan 2)](architecture/02-c4.md)
 
+## Tata kelola (Govern)
+
+- [Kebijakan keamanan](governance/security-policy.md)
+- [RACI](governance/raci.md)
+
+## Keamanan
+
+- [Asset Inventory dan DFD](security/asset-inventory-dfd.md)
+
 ## Keputusan arsitektur (ADR)
 
 - [0001 Bahasa dan framework: TypeScript, Node.js, Express](adr/0001-bahasa-dan-framework.md)
