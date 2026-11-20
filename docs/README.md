@@ -6,6 +6,7 @@
 
 - [01 Scope dan profil perusahaan](architecture/01-scope.md)
 - [02 Arsitektur C4 (Level 1 dan 2)](architecture/02-c4.md)
+- [03 Model ledger](architecture/03-ledger.md)
 
 ## Tata kelola (Govern)
 
@@ -23,3 +24,5 @@
 - [0003 Database: PostgreSQL](adr/0003-database-postgresql.md)
 - [0004 Event bus: NATS](adr/0004-event-bus-nats.md)
 - [0005 Alat diagram: Mermaid C4](adr/0005-diagram-mermaid-c4.md)
+- [0006 Database: satu database per service](adr/0006-database-per-service.md)
+- [0007 Komunikasi antar service](adr/0007-komunikasi-antar-service.md)
